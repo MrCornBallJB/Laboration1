@@ -1,1 +1,1 @@
-First laboratory for objektiv orienterad programmering made by Jens Blixt and Mobeen Al-Masri
+First laboratory for objekt orienterad programmering made by Jens Blixt and Mobeen Al-Masri
