@@ -10,7 +10,8 @@ namespace Laboration1
         
         static void Main(string[] args)
         {
-            
+
+            //Array med flygsresorna
             string[] flyg = { "Stockhom - New York", "New York - Stockholm" };
 
             //Början av interface
@@ -20,27 +21,32 @@ namespace Laboration1
             while (true)
             {
                 
+                int avslut = 0;
+
+                
                 //For-loop som går igenom arrayen för att läsa upp interfacen
                 for (int i = 0; i < flyg.Length; i++)
                 {
                     Console.WriteLine((i + 1) + ": " + flyg[i]);
+                    avslut++;
                 }
-                Console.WriteLine("3: Avsluta proggrammet");
+                Console.WriteLine((avslut+1) + ": Avsluta proggrammet");
 
                 //Början av userinputs
                 int svar = int.Parse(Console.ReadLine());
+                Console.WriteLine();
 
                 //Switchcases som läser användarens svar
                 switch (svar)
                 {
                     case 1:
                         //fakta om Stockholm - New York
-                        svar1();
+                        svar1(flyg[0]);
                         break;
 
                     case 2:
-                        //fakta om Stockholm - New York
-                        svar2();
+                        //fakta om New York - Stockholm
+                        svar2(flyg[1]);
                         break;
 
                     case 3:
@@ -56,7 +62,7 @@ namespace Laboration1
 
 
         }
-        static void svar1() 
+        static void svar1(string flyg) 
         {
             //Avgångstiden
             int avgtimmar = 14;
@@ -69,27 +75,20 @@ namespace Laboration1
             int tidsskillnad = 6;
 
             //
-            Console.WriteLine("Avågnstiden från Stockhom - New York: " + avgtimmar.ToString("00")+":" + avgminuter.ToString("00"));
+            Console.WriteLine("Avågnstiden för " +flyg + " " + avgtimmar.ToString("00")+":" + avgminuter.ToString("00"));
 
             //Adderar avgångstiderna och flygsträckan och sätter de i en string för att göra så att det kan bli "00"
             string fulltimmar = (avgtimmar + flygtimmar - tidsskillnad).ToString("00");
             string fullminuter = (avgminuter + flygminuter).ToString("00");
+            Console.WriteLine("Tids skillnaden är " + tidsskillnad + " timmar");
 
-            Console.WriteLine("landningstid från Stockholm till NewYork: " + fulltimmar + ":" + fullminuter);
+            Console.WriteLine("landningstid för Stockholm till NewYork: " + fulltimmar + ":" + fullminuter);
 
-            
-
-            //test
-
-
-          
-
-            
 
 
 
         }
-        static void svar2() 
+        static void svar2(string flyg) 
         {
             //Avgångstiden
             int avgtimmar = 10;
@@ -102,11 +101,12 @@ namespace Laboration1
             int tidsskillnad = 6;
 
             //Adderar avgångstiderna och flygsträckan och sätter de i en string för att göra så att det kan bli "00"
-            Console.WriteLine("Avågnstiden från NewYork:" + avgtimmar.ToString("00") + ":" + avgminuter.ToString("00"));
+            Console.WriteLine("Avågnstiden för " + flyg + " " + avgtimmar.ToString("00") + ":" + avgminuter.ToString("00"));
             string fulltimmar = (avgtimmar + flygtimmar + tidsskillnad).ToString("00");
             string fullminuter = (avgminuter + flygminuter).ToString("00");
+            Console.WriteLine("Tids skillnaden är " + tidsskillnad +" timmar");
 
-            Console.WriteLine("landningstid från NewYork till Stockholm: " + fulltimmar + ":" + fullminuter);
+            Console.WriteLine("landningstid för " + flyg + " " + fulltimmar + ":" + fullminuter);
 
         }
         static void exit() 
