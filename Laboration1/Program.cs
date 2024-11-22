@@ -15,8 +15,11 @@ namespace Laboration1
             string[] flyg = { "Stockhom - New York", "New York - Stockholm" };
 
             //Början av interface
+            Console.WriteLine("******************************************");
+            Console.WriteLine();
             Console.WriteLine("Välkommen till flygtidsberäknaren!");
-            Console.WriteLine("Vilken resa vill du se detaljerad information om? Svara med nummer");
+            Console.WriteLine();
+            Console.WriteLine("Vilken resa vill du se detaljerad information om? (Svara med siffror)");
 
             while (true)
             {
@@ -33,6 +36,7 @@ namespace Laboration1
                 Console.WriteLine((avslut+1) + ": Avsluta proggrammet");
 
                 //Början av userinputs
+                Console.Write("Skriv ditt vavl här: ");
                 int svar = int.Parse(Console.ReadLine());
                 Console.WriteLine();
 
@@ -74,17 +78,23 @@ namespace Laboration1
 
             int tidsskillnad = 6;
 
-            //
-            Console.WriteLine("Avågnstiden för " +flyg + " " + avgtimmar.ToString("00")+":" + avgminuter.ToString("00"));
-
             //Adderar avgångstiderna och flygsträckan och sätter de i en string för att göra så att det kan bli "00"
             string fulltimmar = (avgtimmar + flygtimmar - tidsskillnad).ToString("00");
             string fullminuter = (avgminuter + flygminuter).ToString("00");
-            Console.WriteLine("Tids skillnaden är " + tidsskillnad + " timmar");
 
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("**********************************************************************");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Avågnstiden för " +flyg + " " + avgtimmar.ToString("00")+":" + avgminuter.ToString("00"));
             Console.WriteLine("landningstid för Stockholm till NewYork: " + fulltimmar + ":" + fullminuter);
-
-
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("**********************************************************************");
+            Console.WriteLine();
+            Console.WriteLine();
+            //test commit
 
 
         }
@@ -101,12 +111,22 @@ namespace Laboration1
             int tidsskillnad = 6;
 
             //Adderar avgångstiderna och flygsträckan och sätter de i en string för att göra så att det kan bli "00"
-            Console.WriteLine("Avågnstiden för " + flyg + " " + avgtimmar.ToString("00") + ":" + avgminuter.ToString("00"));
             string fulltimmar = (avgtimmar + flygtimmar + tidsskillnad).ToString("00");
             string fullminuter = (avgminuter + flygminuter).ToString("00");
-            Console.WriteLine("Tids skillnaden är " + tidsskillnad +" timmar");
 
+            
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("**********************************************************************");
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Avågnstiden för " + flyg + " " + avgtimmar.ToString("00") + ":" + avgminuter.ToString("00"));
             Console.WriteLine("landningstid för " + flyg + " " + fulltimmar + ":" + fullminuter);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("**********************************************************************");
+            Console.WriteLine();
+            Console.WriteLine();
 
         }
         static void exit() 
