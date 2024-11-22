@@ -36,7 +36,7 @@ namespace Laboration1
                 Console.WriteLine((avslut+1) + ": Avsluta proggrammet");
 
                 //Början av userinputs
-                Console.Write("Skriv ditt vavl här: ");
+                Console.Write("Skriv ditt val här: ");
                 int svar = int.Parse(Console.ReadLine());
                 Console.WriteLine();
 
